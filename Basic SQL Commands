@@ -1,0 +1,41 @@
+Basic SQL Commands
+
+1. SELECT
+Used to retrieve data from a database table.
+
+Example:
+
+SELECT * FROM employees;
+
+2. FROM
+Specifies the table from which the data should be retrieved.
+
+Example:
+
+SELECT name FROM employees;
+
+3. WHERE
+Used to filter records based on a condition.
+
+Example:
+
+SELECT * FROM employees
+WHERE salary > 50000;
+
+4. ORDER BY
+Used to sort the result in ascending (ASC) or descending (DESC) order.
+
+Example:
+
+SELECT * FROM employees
+ORDER BY salary DESC;
+
+5. LIMIT
+Restricts the number of rows returned in the output.
+
+Example:
+
+SELECT * FROM employees
+LIMIT 5;
+
+These commands are the foundation of SQL queries and are commonly used to retrieve and analyze data from databases.
