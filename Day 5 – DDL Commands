@@ -1,0 +1,38 @@
+On Day 5 of my SQL for Data Science learning journey, I revised and practiced DDL (Data Definition Language) commands to strengthen my understanding of database structure management.
+
+DDL commands are used to create, modify, and delete database structures such as tables. These commands are essential for designing how data is stored and organized in a database.
+
+DDL Commands with Examples
+
+1. CREATE
+Used to create a new table.
+
+Example:
+
+CREATE TABLE employees (
+    id INT,
+    name VARCHAR(50),
+    salary INT
+);
+
+2. ALTER
+Used to modify an existing table.
+
+Example:
+
+ALTER TABLE employees
+ADD department VARCHAR(50);
+
+3. DROP
+Used to permanently delete a table.
+
+Example:
+
+DROP TABLE employees;
+
+4. TRUNCATE
+Used to delete all records from a table while keeping its structure.
+
+Example:
+
+TRUNCATE TABLE employees;
