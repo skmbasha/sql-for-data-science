@@ -1,0 +1,68 @@
+On Day 6 of my SQL for Data Science learning journey, I learned about changing data types and using arithmetic operators in SQL. These concepts are important for transforming and performing calculations on data during analysis.
+
+I explored how data types can be converted from one form to another using functions like CAST() and CONVERT(). Changing data types is useful when the data stored in a table is not in the required format for analysis. For example, converting a string to an integer or a number to a decimal helps in performing accurate calculations.
+
+I also learned about arithmetic operators in SQL, which are used to perform mathematical operations on numeric data. These include addition (+), subtraction (-), multiplication (*), and division (/). These operators are commonly used to calculate values such as total salary, average marks, or profit.
+
+Examples
+
+Changing Data Type:
+
+SELECT CAST(salary AS DECIMAL(10,2)) 
+FROM employees;
+
+Using Arithmetic Operators:
+
+SELECT salary + 5000 AS updated_salary
+FROM employees;
+SELECT salary * 12 AS annual_salary
+FROM employees;
+More Examples
+Changing Data Types
+
+Convert string to integer:
+
+SELECT CAST('100' AS INT);
+
+Convert integer to decimal:
+
+SELECT CAST(2500 AS DECIMAL(10,2));
+
+Convert column data type:
+
+SELECT CAST(salary AS FLOAT)
+FROM employees;
+Arithmetic Operators
+
+Addition (+):
+
+SELECT salary + 2000 AS bonus_salary
+FROM employees;
+
+Subtraction (-):
+
+SELECT salary - 1000 AS reduced_salary
+FROM employees;
+
+Multiplication (*):
+
+SELECT salary * 12 AS yearly_salary
+FROM employees;
+
+Division (/):
+
+SELECT salary / 30 AS per_day_salary
+FROM employees;
+Using Multiple Operations Together
+SELECT (salary + 2000) * 12 AS total_annual_income
+FROM employees;
+Using Arithmetic with WHERE
+SELECT *
+FROM employees
+WHERE salary * 12 > 500000;
+
+Summary
+
+Understanding how to change data types and use arithmetic operators is essential for data analysis. These concepts help in preparing data, performing calculations, and generating meaningful insights from datasets.
+
+This session improved my ability to transform and work with data more effectively using SQL.
