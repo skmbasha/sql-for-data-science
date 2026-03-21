@@ -1,0 +1,141 @@
+On Day 7 of my SQL for Data Science learning journey, I learned about relational, logical, and membership operators in SQL. These operators are used to filter data based on conditions and are very important for data analysis.
+
+Relational operators are used to compare values, logical operators are used to combine multiple conditions, and membership operators are used to check whether a value exists within a set.
+
+Relational Operators
+
+Used to compare values.
+
+Operators:
+
+= (equal to)
+> (greater than)
+< (less than)
+>= (greater than or equal to)
+<= (less than or equal to)
+!= or <> (not equal to)
+
+Example:
+
+SELECT *
+FROM employees
+WHERE salary > 30000;
+SELECT *
+FROM employees
+WHERE salary <= 50000;
+Logical Operators
+
+Used to combine multiple conditions.
+
+Operators:
+
+AND
+OR
+NOT
+
+Examples:
+
+AND:
+
+SELECT *
+FROM employees
+WHERE salary > 30000 AND department = 'HR';
+
+OR:
+
+SELECT *
+FROM employees
+WHERE department = 'HR' OR department = 'IT';
+
+NOT:
+
+SELECT *
+FROM employees
+WHERE NOT department = 'HR';
+Membership Operators
+
+Used to check values within a set.
+
+Operator:
+
+IN
+NOT IN
+
+Examples:
+
+IN:
+
+SELECT *
+FROM employees
+WHERE department IN ('HR', 'IT', 'Finance');
+
+NOT IN:
+
+SELECT *
+FROM employees
+WHERE department NOT IN ('HR', 'IT');
+Additional Examples
+Relational Operators
+
+Equal to (=):
+
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+Not equal to (!=):
+
+SELECT *
+FROM employees
+WHERE salary != 30000;
+
+Greater than or equal to (>=):
+
+SELECT *
+FROM employees
+WHERE salary >= 40000;
+Logical Operators
+
+AND with multiple conditions:
+
+SELECT *
+FROM employees
+WHERE salary > 30000 AND department = 'IT';
+
+OR with multiple conditions:
+
+SELECT *
+FROM employees
+WHERE department = 'HR' OR salary > 50000;
+
+NOT with condition:
+
+SELECT *
+FROM employees
+WHERE NOT salary < 25000;
+Membership Operators
+
+IN with numbers:
+
+SELECT *
+FROM employees
+WHERE id IN (1, 2, 3, 4);
+
+NOT IN with values:
+
+SELECT *
+FROM employees
+WHERE department NOT IN ('Finance', 'HR');
+Combining All Operators
+SELECT *
+FROM employees
+WHERE salary > 30000 
+AND department IN ('IT', 'HR');
+Using Operators with ORDER BY
+SELECT *
+FROM employees
+WHERE salary >= 30000
+ORDER BY salary DESC;
+Summary
+
+Relational, logical, and membership operators are essential for filtering and analyzing data in SQL. They help in retrieving specific records based on conditions and are widely used in real-world data queries.
