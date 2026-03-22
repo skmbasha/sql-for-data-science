@@ -1,0 +1,91 @@
+On Day 8 of my SQL for Data Science learning journey, I learned about SQL constraints, which are rules applied to table columns to ensure data accuracy, consistency, and reliability.
+
+Constraints are important because they help maintain the quality of data in a database by restricting the type of data that can be inserted into a table.
+
+During this session, I focused on three commonly used constraints: NOT NULL, CHECK, and DEFAULT.
+
+The NOT NULL constraint ensures that a column cannot have NULL (empty) values. This means every record must contain a value for that column, which is useful for important fields like names or IDs.
+
+The CHECK constraint is used to limit the values that can be inserted into a column based on a specific condition. This helps in maintaining valid data, such as ensuring that salary values are always greater than zero.
+
+The DEFAULT constraint is used to assign a default value to a column when no value is provided during insertion. This is useful for setting standard values automatically.
+
+Examples
+
+NOT NULL:
+
+CREATE TABLE employees (
+    id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    salary INT
+);
+
+CHECK:
+
+CREATE TABLE employees (
+    id INT,
+    salary INT CHECK (salary > 0)
+);
+
+DEFAULT:
+
+CREATE TABLE employees (
+    id INT,
+    department VARCHAR(50) DEFAULT 'General'
+);
+Additional Examples
+NOT NULL Constraint
+
+Ensuring required fields are not empty:
+
+CREATE TABLE students (
+    id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    age INT
+);
+
+Insert (will fail if NULL is given):
+
+INSERT INTO students (id, name)
+VALUES (1, NULL);
+CHECK Constraint
+
+Ensuring valid age:
+
+CREATE TABLE students (
+    id INT,
+    age INT CHECK (age >= 18)
+);
+
+Multiple conditions in CHECK:
+
+CREATE TABLE employees (
+    id INT,
+    salary INT CHECK (salary > 0 AND salary <= 100000)
+);
+DEFAULT Constraint
+
+Setting default value:
+
+CREATE TABLE employees (
+    id INT,
+    department VARCHAR(50) DEFAULT 'HR'
+);
+
+Insert without specifying column:
+
+INSERT INTO employees (id)
+VALUES (1);
+Combining Constraints
+CREATE TABLE employees (
+    id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    salary INT CHECK (salary > 0),
+    department VARCHAR(50) DEFAULT 'General'
+);
+Using ALTER to Add Constraints
+ALTER TABLE employees
+ADD CONSTRAINT chk_salary CHECK (salary > 0);
+Summary
+
+Constraints play a key role in maintaining data integrity in a database. By using NOT NULL, CHECK, and DEFAULT, we can ensure that only valid and consistent data is stored.
