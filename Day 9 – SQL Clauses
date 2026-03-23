@@ -1,0 +1,107 @@
+On Day 9 of my SQL for Data Science learning journey, I learned about SQL clauses, which are used to define conditions and modify how data is retrieved from a database. Clauses are an essential part of SQL queries and help in filtering, sorting, grouping, and limiting data.
+
+SQL clauses are used along with commands like SELECT to create meaningful and structured queries. They help in extracting specific information from large datasets efficiently.
+
+During this session, I explored commonly used SQL clauses such as WHERE, ORDER BY, GROUP BY, HAVING, and LIMIT.
+
+The WHERE clause is used to filter records based on specific conditions, allowing only relevant data to be retrieved. The ORDER BY clause is used to sort the result set in ascending or descending order. The GROUP BY clause is used to group rows that have the same values, which is often used with aggregate functions like COUNT, SUM, and AVG. The HAVING clause is used to filter grouped data after applying aggregation. The LIMIT clause is used to restrict the number of rows returned in the output.
+
+Examples
+
+WHERE Clause:
+
+SELECT * 
+FROM employees
+WHERE salary > 30000;
+
+ORDER BY Clause:
+
+SELECT * 
+FROM employees
+ORDER BY salary DESC;
+
+GROUP BY Clause:
+
+SELECT department, COUNT(*) 
+FROM employees
+GROUP BY department;
+
+HAVING Clause:
+
+SELECT department, COUNT(*) 
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 2;
+
+LIMIT Clause:
+
+SELECT * 
+FROM employees
+LIMIT 5;
+Additional Examples
+WHERE Clause
+
+Filter by multiple conditions:
+
+SELECT *
+FROM employees
+WHERE salary > 30000 AND department = 'IT';
+
+Using OR:
+
+SELECT *
+FROM employees
+WHERE department = 'HR' OR department = 'Finance';
+ORDER BY Clause
+
+Sort in ascending order:
+
+SELECT *
+FROM employees
+ORDER BY salary ASC;
+
+Sort by multiple columns:
+
+SELECT *
+FROM employees
+ORDER BY department ASC, salary DESC;
+GROUP BY Clause
+
+Sum of salaries by department:
+
+SELECT department, SUM(salary)
+FROM employees
+GROUP BY department;
+
+Average salary:
+
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department;
+HAVING Clause
+
+Filter grouped data:
+
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 40000;
+LIMIT Clause
+
+Top 3 highest salaries:
+
+SELECT *
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;
+Combining Multiple Clauses
+SELECT department, COUNT(*)
+FROM employees
+WHERE salary > 30000
+GROUP BY department
+HAVING COUNT(*) > 1
+ORDER BY department ASC
+LIMIT 5;
+Summary
+
+SQL clauses are powerful tools that help refine and control the output of queries. They are widely used in data analysis to filter, organize, and summarize data effectively.
